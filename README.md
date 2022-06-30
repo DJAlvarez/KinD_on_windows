@@ -1,5 +1,5 @@
 # KinD
-Kind, estands for Kubernetes in Docker. It's a lightweight alternative to MiniKube
+Kind, stands for Kubernetes in Docker. It's a lightweight alternative to MiniKube
 which is based on Virtual Machines.  
 For more information visit [Kind](https://kind.sigs.k8s.io/).
 
@@ -9,7 +9,7 @@ kind create cluster  --name=<cluster-name>
 ```
 
 ## Managing contexts
-Creating a cluster will modify out ~/.kube/config file. This file is responsible for
+Creating a cluster will modify our ~/.kube/config file. This file is responsible for
 authentication of different contexts. In order to switch between contexts:
 
 ```sh
@@ -24,7 +24,7 @@ Once we have our context properly configured, we can deploy our application usin
 
 ## Accessing the application
 ### Linux
-On linux, since contianers run natively on the host, we can access the application in
+On linux, since containers run natively on the host, we can access the application in
 a much simpler way, with no extra configuration.  
 To access a NodePort service within the cluster, we can use the 2 following commands,
 to get the address of the service:
@@ -52,7 +52,7 @@ nodes:
     hostPort: 30000
     protocol: TCP
 ```
-The we can create the cluster using the following command:
+Then we can create the cluster using the following command, which will expose the port 30000 on the container:
 ```sh
 kind create cluster --config=cluster-config.yaml --name=<cluster-name>
 ```
