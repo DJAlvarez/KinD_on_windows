@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-deployment
+  labels:
+    app: catalog
+spec:
+  template:
+    metadata:
+      name: catalog-pod
+      labels:
+        app: catalog
+    spec:
+      containers:
+        - name: catalog-container
+          image: registry.gitlab.com/ax-cemex/e2eo/microservicios/catalog/catalog:v0.0.3
+      imagePullSecrets:
+        - name: gitlab-container-registry
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog
